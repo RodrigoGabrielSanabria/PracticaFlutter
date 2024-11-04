@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_world_app/presentation/screens/counter_screen.dart';
+import 'package:hello_world_app/presentation/screens/counter/counter_screen.dart';
 
 // import 'package:hello_world_app/presentation/screens/counter/counter_screen.dart';
 
