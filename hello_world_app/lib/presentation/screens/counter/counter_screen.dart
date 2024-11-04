@@ -8,25 +8,38 @@ class CounterScreen extends StatefulWidget { //cambio de stateless widgets a sta
 }
 
 class _CounterScreenState extends State<CounterScreen> {
+
+
+  int clickCounter = 0; //variable para contar el numero de clicks
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: AppBar(
-        title: const Center(
+      appBar:  AppBar(
+        title: const  Center(
           child:
           Text('Counter Screen')) ,
       ) ,
-        body: const  Center(
+        body:   Center(
           child:  Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children:  [
-              Text('10', style: TextStyle(fontSize: 160, fontWeight: FontWeight.w100),),
-              Text('Clicks', style: TextStyle(fontSize: 25))
+              Text('$clickCounter',
+               style: const TextStyle(fontSize: 160, fontWeight: FontWeight.w100),),
+              const Text('Clicks', style: TextStyle(fontSize: 25))
             ],
           ),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
+
+            clickCounter++;
+            setState(() {     //renderisa la app, al click en el boton incrementa el numero de clicks 
+              
+            });
 
           },
           child: const Icon(Icons.plus_one, color: Colors.purpleAccent,),
