@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 
-class CounterScreen extends StatelessWidget {
+class CounterScreen extends StatefulWidget { //cambio de stateless widgets a stateful widget para poder agregar al boton del contador su funcinalidad
   const CounterScreen({super.key});
 
+  @override
+  State<CounterScreen> createState() => _CounterScreenState();
+}
+
+class _CounterScreenState extends State<CounterScreen> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title: const Text('Counter Screen'),
+        title: const Center(
+          child:
+          Text('Counter Screen')) ,
       ) ,
         body: const  Center(
           child:  Column(
@@ -22,7 +29,8 @@ class CounterScreen extends StatelessWidget {
           onPressed: () {
 
           },
-          child: const Icon(Icons.plus_one),
+          child: const Icon(Icons.plus_one, color: Colors.purpleAccent,),
+          
           ),
       );
   }
