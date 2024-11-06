@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yes_no_app/presentation/widgets/chat/her_message_bubble.dart';
 import 'package:yes_no_app/presentation/widgets/chat/my_message_bubble.dart';
 
 
@@ -39,7 +40,9 @@ class _ChatView extends StatelessWidget {
             Expanded(child: ListView.builder(
               itemCount: 100,
               itemBuilder: (context, index) {
-                  return const MyMessageBubble();
+                  return (index %  2 == 0)        //alterna el lado que se muestra el chat dependiendo quien escribe
+                  ? const HerMessageBubble()
+                  : const MyMessageBubble();
               },)),
            
            //Teclado en esta seccion
