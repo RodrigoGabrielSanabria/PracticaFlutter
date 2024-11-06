@@ -19,6 +19,32 @@ class ChatScreen extends StatelessWidget {
         title: const Text('Mi amor ❤️'),
         centerTitle: false,
       ),
+      body: _ChatView(),
+    );
+
+  }
+}
+
+class _ChatView extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(  //se usa para que no interfiera con los gestos del telefono
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10), //agrega un borde para que el contenido no este pegado a los bordes
+        child: Column(
+          children: [//Expanded: Abarca una parte de la pantalla  para mostrar el contenido distribuido
+            Expanded(child: ListView.builder(
+              itemCount: 100,
+              itemBuilder: (context, index) {
+                  return Text('Indice: $index');
+              },)),
+           
+           //Teclado en esta seccion
+           Text('Mundo'), 
+          ],
+        ),
+      ),
     );
   }
 }
