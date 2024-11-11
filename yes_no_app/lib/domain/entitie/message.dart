@@ -1,5 +1,5 @@
 
-enum FromWho {mine, her}    //Enum para saber de quien es el mensaje enviado
+enum FromWho {me, hers}    //Enum para saber de quien es el mensaje enviado
 
 class Message {
   final String text;
