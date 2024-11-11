@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MessageFielBox extends StatelessWidget {
-  const MessageFielBox({super.key});
+class MessageFieldBox extends StatelessWidget {
+  const MessageFieldBox({super.key});
 
   @override
   Widget build(BuildContext context) {
