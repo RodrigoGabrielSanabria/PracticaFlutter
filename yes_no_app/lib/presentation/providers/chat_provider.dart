@@ -4,6 +4,7 @@ import 'package:yes_no_app/domain/entitie/message.dart';
 
 class ChatProvider extends ChangeNotifier{
 
+final ScrollController chatScrollController = ScrollController();
 
 List<Message>messageList =[
 
@@ -16,6 +17,9 @@ Future<void> sendMessage(String text) async {
 
    final newMessage = Message(text: text, fromWho: FromWho.me);
    messageList.add(newMessage);
+
+   notifyListeners();
+ 
 }
 
 
