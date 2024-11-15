@@ -38,9 +38,7 @@ class _ChatView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-
    final chatProvider = context.watch<ChatProvider>();
-
 
     return SafeArea(  //se usa para que no interfiera con los gestos del telefono
       child: Padding(
@@ -51,7 +49,6 @@ class _ChatView extends StatelessWidget {
               itemCount: chatProvider.messageList.length,
               itemBuilder: (context, index) {
                  final message =chatProvider.messageList[index]; 
-
                  return (message.fromWho == FromWho.hers)
                  ? const HerMessageBubble()
                  :  MyMessageBubble(message: message);
