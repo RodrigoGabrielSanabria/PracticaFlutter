@@ -46,16 +46,19 @@ class _ChatView extends StatelessWidget {
         child: Column(
           children: [//Expanded: Abarca una parte de la pantalla  para mostrar el contenido distribuido
             Expanded(child: ListView.builder(
+              controller: chatProvider.chatScrollController, 
               itemCount: chatProvider.messageList.length,
               itemBuilder: (context, index) {
                  final message =chatProvider.messageList[index]; 
-                 return (message.fromWho == FromWho.hers)
+                 return (message.fromWho == FromWho.hers) //retorna los mensajes de el o ella
                  ? const HerMessageBubble()
-                 :  MyMessageBubble(message: message);
+                 :  MyMessageBubble(message: message);  
               },)),
            
            /// Caja de texto
-           const MessageFieldBox(), 
+           MessageFieldBox(
+            onValue: chatProvider.sendMessage,
+           ), 
           ],
         ),
       ),
