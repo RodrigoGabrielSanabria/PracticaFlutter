@@ -14,7 +14,8 @@ Message(text: 'Ya regresaste del trabajo?', fromWho: FromWho.me),
 
 Future<void> sendMessage(String text) async {
 
-      //Implementar metodo
+   final newMessage = Message(text: text, fromWho: FromWho.me);
+   messageList.add(newMessage);
 }
 
 
